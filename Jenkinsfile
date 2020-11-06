@@ -16,7 +16,7 @@ pipeline
      {
       steps
       {
-      echo "testing application"
+      sh 'py.test --verbose --junit-xml test-reports/results.xml sources/test_calc.py'
       }
      }
      
@@ -24,7 +24,7 @@ pipeline
      {
       steps
       {
-      echo "deploy application"
+      sh 'pyinstaller --onefile sources/add2vals.py'
       }
      }
      
